@@ -1,15 +1,14 @@
 def merge_sort(arr): 
     if len(arr) > 1: 
-        mid = len(arr)//2 #Finding the mid of the array 
-        left = arr[:mid] # Dividing the array elements  
-        right = arr[mid:] # into 2 halves 
+        mid = len(arr)//2
+        left = arr[:mid]   
+        right = arr[mid:]
   
-        merge_sort(left) # Sorting the first half 
-        merge_sort(right) # Sorting the second half 
+        merge_sort(left)  
+        merge_sort(right) 
   
         i = j = k = 0
           
-        # Copy data to temp arrays L[] and R[] 
         while i < len(left) and j < len(right): 
             if left[i] < right[j]: 
                 arr[k] = left[i] 
@@ -19,7 +18,6 @@ def merge_sort(arr):
                 j+=1
             k+=1
           
-        # Checking if any element was left 
         while i < len(left): 
             arr[k] = left[i] 
             i+=1
